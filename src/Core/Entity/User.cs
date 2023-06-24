@@ -1,8 +1,15 @@
 using MediaPlayer.src.Core.Entity;
 using MediaPlayer.src.Core.Entity.Observer;
+using MediaPlayer.src.Core.Observer;
 
-public class User : ISubscriber, IVideoFile, IAudioFile
+namespace MediaPlayer.src.Core.Entity
 {
+public class User : ISubscriber, IVideoFile, IAudioFile, IMediaPlayerObserver
+{   
+    public void Update(MediaPlayerEventArgs args)
+        {
+            Console.WriteLine("Received media player event: " + args.EventMessage);
+        }
     public void OnRecieved(string message)
     {
         throw new NotImplementedException();
@@ -10,10 +17,11 @@ public class User : ISubscriber, IVideoFile, IAudioFile
 
     public void PlayVideoFile(User user)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("VideoFile");;
     }
     public void PlayVAudioFile(User user)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("AudioFile");
     }
+}
 }
