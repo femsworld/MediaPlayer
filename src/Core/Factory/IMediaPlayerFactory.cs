@@ -6,4 +6,9 @@ public interface IMediaPlayerFactory
     {
         IMediaPlayer CreatePlayer();
     }
+
+    abstract class MediaFactory
+    {
+        
+    }
 }

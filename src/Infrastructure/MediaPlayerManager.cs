@@ -10,20 +10,13 @@ namespace MediaPlayer.src.infrastructure
 
         private MediaPlayerManager()
         {
-            // Private constructor to prevent instantiation
         }
-
-        // Media player event to be observed
         public event EventHandler<MediaPlayerEventArgs> MediaPlayerEvent;
 
-        // Raise the media player event
         public void RaiseMediaPlayerEvent(MediaPlayerEventArgs args)
         {
             MediaPlayerEvent?.Invoke(this, args);
         }
-
-        // Other methods and properties related to the media player manager
-        // ...
     }
 
     }

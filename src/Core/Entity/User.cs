@@ -6,7 +6,7 @@ namespace MediaPlayer.src.Core.Entity
 {
 public class User : ISubscriber, IVideoFile, IAudioFile, IMediaPlayerObserver
 {   
-    public void Update(MediaPlayerEventArgs args)
+    public void Update(object sender, MediaPlayerEventArgs args)
         {
             Console.WriteLine("Received media player event: " + args.EventMessage);
         }
